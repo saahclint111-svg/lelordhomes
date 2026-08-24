@@ -35,10 +35,23 @@ export const Footer: React.FC = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <div className="mb-4">
-              <p className="font-playfair text-2xl font-bold text-white tracking-[0.15em] uppercase">LE LÖRD</p>
-              <p className="text-[#C8A45D] text-[9px] tracking-[0.5em] uppercase font-inter -mt-1">HOMES</p>
+            <div className="mb-1">
+              <img
+                src="/images/le-lord-logo.png"
+                alt="Le Lörd Homes"
+                className="h-10 w-auto object-contain"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                  const fb = e.currentTarget.nextElementSibling as HTMLElement | null;
+                  if (fb) fb.style.display = 'block';
+                }}
+              />
+              <div className="hidden">
+                <p className="font-playfair text-2xl font-bold text-white tracking-[0.15em] uppercase">LE LÖRD</p>
+                <p className="text-[#C8A45D] text-[9px] tracking-[0.5em] uppercase font-inter -mt-1">HOMES</p>
+              </div>
             </div>
+            <p className="text-[#C8A45D] text-[8px] tracking-[0.55em] uppercase font-inter font-medium mb-4">HOMS</p>
             <p className="text-[#A5A5A5] text-sm font-inter leading-relaxed mb-4">
               PROPERTY MADE EASIER.
             </p>

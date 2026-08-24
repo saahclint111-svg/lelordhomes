@@ -9,6 +9,8 @@ const ConsultationsPage: React.FC = () => (
     <Helmet>
       <title>Consultations — Le Lörd Homes</title>
       <meta name="description" content="Book a property consultation with Le Lörd Homes. Discovery call, 30-minute consultation, or 60-minute strategy session." />
+      <meta property="og:title" content="Consultations — Le Lörd Homes" />
+      <meta property="og:description" content="Book a property consultation with Le Lörd Homes. Discovery call, 30-minute consultation, or 60-minute strategy session." />
     </Helmet>
     <div className="pt-20">
       <section className="py-24 px-6 bg-[#080808] text-center">

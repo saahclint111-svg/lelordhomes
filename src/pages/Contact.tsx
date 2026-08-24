@@ -16,6 +16,8 @@ const Contact: React.FC = () => {
       <Helmet>
         <title>Contact — Le Lörd Homes</title>
         <meta name="description" content="Get in touch with Le Lörd Homes. Send an enquiry or book a consultation." />
+        <meta property="og:title" content="Contact — Le Lörd Homes" />
+        <meta property="og:description" content="Get in touch with Le Lörd Homes. Send an enquiry or book a consultation." />
       </Helmet>
       <div className="pt-20">
         <section className="py-24 px-6 bg-[#080808]">
@@ -29,9 +31,38 @@ const Contact: React.FC = () => {
                 <p className="text-[#A5A5A5] font-inter text-base leading-relaxed mb-8">
                   Have a question, a property or an investment idea? We'd love to hear from you. Send us a message and we'll be in touch.
                 </p>
-                <div className="mb-6">
+                <div className="space-y-4 mb-8">
                   <p className="text-white text-xs tracking-widest uppercase font-inter font-medium mb-4">Quick Contact</p>
                   <WhatsAppButton variant="inline" />
+                  {import.meta.env.VITE_EMAIL && (
+                    <a
+                      href={`mailto:${import.meta.env.VITE_EMAIL}`}
+                      className="flex items-center gap-3 text-[#A5A5A5] hover:text-[#C8A45D] transition-colors font-inter text-sm"
+                    >
+                      <span className="w-4 h-px bg-[#C8A45D]" />
+                      {import.meta.env.VITE_EMAIL}
+                    </a>
+                  )}
+                  {import.meta.env.VITE_PHONE && (
+                    <a
+                      href={`tel:${import.meta.env.VITE_PHONE}`}
+                      className="flex items-center gap-3 text-[#A5A5A5] hover:text-[#C8A45D] transition-colors font-inter text-sm"
+                    >
+                      <span className="w-4 h-px bg-[#C8A45D]" />
+                      {import.meta.env.VITE_PHONE}
+                    </a>
+                  )}
+                  {import.meta.env.VITE_INSTAGRAM_URL && (
+                    <a
+                      href={import.meta.env.VITE_INSTAGRAM_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 text-[#A5A5A5] hover:text-[#C8A45D] transition-colors font-inter text-sm"
+                    >
+                      <span className="w-4 h-px bg-[#C8A45D]" />
+                      Instagram
+                    </a>
+                  )}
                 </div>
               </div>
               <div>

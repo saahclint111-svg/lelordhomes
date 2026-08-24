@@ -35,13 +35,21 @@ export const Hero: React.FC = () => {
 
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
-        <motion.p {...fadeUp(0.3)} className="text-[#C8A45D] tracking-[0.4em] uppercase text-xs font-inter font-medium mb-6">
-          Premium Property Solutions
+        <motion.div {...fadeUp(0.2)} className="flex flex-col items-center mb-6">
+          <img
+            src="/images/le-lord-logo.png"
+            alt="Le Lörd Homes"
+            className="h-14 md:h-16 w-auto object-contain mb-2"
+            onError={(e) => { e.currentTarget.style.display = 'none'; }}
+          />
+        </motion.div>
+        <motion.p {...fadeUp(0.3)} className="text-[#C8A45D] tracking-[0.4em] uppercase text-xs font-inter font-medium mb-3">
+          LE LÖRD HOMES
         </motion.p>
 
-        <motion.h1 {...fadeUp(0.5)} className="font-playfair text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-none tracking-tight mb-6">
-          PROPERTY<br />
-          <span className="italic">MADE EASIER.</span>
+        <motion.h1 {...fadeUp(0.5)} className="font-playfair text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-none tracking-tight mb-4">
+          Premium Property<br />
+          <span className="italic">Solutions.</span>
         </motion.h1>
 
         <motion.p {...fadeUp(0.7)} className="text-[#D7D7D7] font-inter text-base md:text-lg max-w-xl mx-auto leading-relaxed mb-10">

@@ -8,6 +8,8 @@ const About: React.FC = () => (
     <Helmet>
       <title>About — Le Lörd Homes</title>
       <meta name="description" content="Learn about Le Lörd Homes and our approach to premium property solutions." />
+      <meta property="og:title" content="About — Le Lörd Homes" />
+      <meta property="og:description" content="Learn about Le Lörd Homes and our approach to premium property solutions." />
     </Helmet>
     <div className="pt-20">
       <section className="py-24 px-6 bg-[#080808]">

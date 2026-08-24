@@ -41,13 +41,25 @@ export const Navbar: React.FC = () => {
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex flex-col items-start">
-            <span className="font-playfair text-xl md:text-2xl font-bold text-white tracking-[0.15em] uppercase">
-              LE LÖRD
+          <Link to="/" className="flex flex-col items-center">
+            <img
+              src="/images/le-lord-logo.png"
+              alt="Le Lörd Homes"
+              className="h-10 w-auto object-contain"
+              onError={(e) => {
+                e.currentTarget.style.display = 'none';
+                const sibling = e.currentTarget.nextElementSibling as HTMLElement | null;
+                if (sibling) sibling.style.display = 'flex';
+              }}
+            />
+            <span
+              className="hidden flex-col items-start"
+              aria-hidden="true"
+            >
+              <span className="font-playfair text-xl md:text-2xl font-bold text-white tracking-[0.15em] uppercase">LE LÖRD</span>
+              <span className="text-[#C8A45D] text-[9px] tracking-[0.5em] uppercase font-inter font-medium -mt-1">HOMES</span>
             </span>
-            <span className="text-[#C8A45D] text-[9px] tracking-[0.5em] uppercase font-inter font-medium -mt-1">
-              HOMES
-            </span>
+            <span className="text-[#C8A45D] text-[8px] tracking-[0.55em] uppercase font-inter font-medium mt-0.5">HOMS</span>
           </Link>
 
           {/* Desktop nav */}
