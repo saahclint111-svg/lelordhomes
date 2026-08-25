@@ -21,11 +21,11 @@ const Home: React.FC = () => (
     </Helmet>
     <Hero />
     <BrandIntro />
-    <ServicesSection />
     <PropertyManagementCTA />
+    <ServicesSection />
     <WhyUs />
-    <Testimonials />
     <Founder />
+    <Testimonials />
     <ConsultationsSection />
     <ContactCTA />
   </>
