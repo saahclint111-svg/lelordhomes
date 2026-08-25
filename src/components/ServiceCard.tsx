@@ -19,26 +19,26 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, ic
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group relative bg-[#111111] border border-white/5 p-8 hover:border-[#C8A45D]/30 transition-all duration-500 cursor-pointer"
+      viewport={{ once: true, margin: '-60px' }}
+      transition={{ duration: 0.55, delay: index * 0.08 }}
+      className="group relative bg-[#111111] border border-white/5 p-10 hover:border-[#C8A45D]/25 transition-all duration-500 cursor-pointer flex flex-col"
     >
-      <div className="mb-6">
-        <div className="w-12 h-12 border border-[#C8A45D]/30 flex items-center justify-center group-hover:border-[#C8A45D] transition-colors duration-300">
-          <Icon size={22} className="text-[#C8A45D]" />
+      <div className="mb-7">
+        <div className="w-11 h-11 border border-[#C8A45D]/30 flex items-center justify-center group-hover:border-[#C8A45D] transition-colors duration-300">
+          <Icon size={20} className="text-[#C8A45D]" />
         </div>
       </div>
-      <h3 className="font-playfair text-xl font-semibold text-white mb-3 tracking-tight">{title}</h3>
-      <p className="text-[#A5A5A5] text-sm leading-relaxed font-inter mb-6">{description}</p>
+      <h3 className="font-playfair text-xl font-semibold text-white mb-4 tracking-tight leading-snug">{title}</h3>
+      <p className="text-[#A5A5A5] text-sm leading-relaxed font-inter mb-8 flex-grow">{description}</p>
       <a
         href={slug}
-        className="inline-flex items-center gap-2 text-[#C8A45D] text-xs tracking-widest uppercase font-medium group-hover:gap-3 transition-all duration-300"
+        className="inline-flex items-center gap-2 text-[#C8A45D] text-[11px] tracking-widest uppercase font-medium group-hover:gap-3 transition-all duration-300"
       >
-        Learn More <ArrowRight size={14} />
+        Learn More <ArrowRight size={13} />
       </a>
-      <div className="absolute bottom-0 left-0 h-px w-0 bg-gradient-to-r from-[#C8A45D] to-transparent group-hover:w-full transition-all duration-500" />
+      <div className="absolute bottom-0 left-0 h-px w-0 bg-[#C8A45D]/60 group-hover:w-full transition-all duration-500" />
     </motion.div>
   );
 };

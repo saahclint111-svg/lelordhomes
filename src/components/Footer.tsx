@@ -30,12 +30,12 @@ export const Footer: React.FC = () => {
   const instagram = import.meta.env.VITE_INSTAGRAM_URL;
 
   return (
-    <footer className="bg-[#080808] border-t border-white/5 pt-16 pb-8 px-6">
+    <footer className="bg-[#080808] border-t border-white/5 pt-20 pb-8 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-14 mb-20">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <div className="mb-1">
+            <div className="mb-5">
               <img
                 src="/images/le-lord-logo.png"
                 alt="Le Lörd Homes"
@@ -43,7 +43,7 @@ export const Footer: React.FC = () => {
                 onError={(e) => {
                   e.currentTarget.style.display = 'none';
                   const fb = e.currentTarget.nextElementSibling as HTMLElement | null;
-                  if (fb) fb.style.display = 'block';
+                  if (fb) fb.style.removeProperty('display');
                 }}
               />
               <div className="hidden">
@@ -51,12 +51,11 @@ export const Footer: React.FC = () => {
                 <p className="text-[#C8A45D] text-[9px] tracking-[0.5em] uppercase font-inter -mt-1">HOMES</p>
               </div>
             </div>
-            <p className="text-[#C8A45D] text-[8px] tracking-[0.55em] uppercase font-inter font-medium mb-4">HOMS</p>
-            <p className="text-[#A5A5A5] text-sm font-inter leading-relaxed mb-4">
-              PROPERTY MADE EASIER.
+            <p className="text-[#A5A5A5] text-xs tracking-[0.2em] uppercase font-inter leading-relaxed mb-6">
+              Property Made Easier.
             </p>
             {instagram && (
-              <a href={instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="inline-flex items-center gap-2 text-[#A5A5A5] hover:text-[#C8A45D] transition-colors">
+              <a href={instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="inline-flex items-center gap-2 text-[#A5A5A5] hover:text-[#C8A45D] transition-colors duration-200">
                 <InstagramIcon size={18} />
               </a>
             )}
@@ -64,11 +63,11 @@ export const Footer: React.FC = () => {
 
           {/* Nav */}
           <div>
-            <p className="text-white text-xs tracking-widest uppercase font-inter font-medium mb-6">Navigate</p>
-            <ul className="space-y-3">
+            <p className="text-white text-[10px] tracking-widest uppercase font-inter font-medium mb-7">Navigate</p>
+            <ul className="space-y-4">
               {navLinks.map(({ label, to }) => (
                 <li key={to}>
-                  <Link to={to} className="text-[#A5A5A5] text-sm font-inter hover:text-[#C8A45D] transition-colors">{label}</Link>
+                  <Link to={to} className="text-[#A5A5A5] text-sm font-inter hover:text-[#C8A45D] transition-colors duration-200">{label}</Link>
                 </li>
               ))}
             </ul>
@@ -76,11 +75,11 @@ export const Footer: React.FC = () => {
 
           {/* Services */}
           <div>
-            <p className="text-white text-xs tracking-widest uppercase font-inter font-medium mb-6">Services</p>
-            <ul className="space-y-3">
+            <p className="text-white text-[10px] tracking-widest uppercase font-inter font-medium mb-7">Services</p>
+            <ul className="space-y-4">
               {serviceLinks.map(({ label, to }) => (
                 <li key={to}>
-                  <Link to={to} className="text-[#A5A5A5] text-sm font-inter hover:text-[#C8A45D] transition-colors">{label}</Link>
+                  <Link to={to} className="text-[#A5A5A5] text-sm font-inter hover:text-[#C8A45D] transition-colors duration-200">{label}</Link>
                 </li>
               ))}
             </ul>
@@ -88,24 +87,24 @@ export const Footer: React.FC = () => {
 
           {/* Contact */}
           <div>
-            <p className="text-white text-xs tracking-widest uppercase font-inter font-medium mb-6">Contact</p>
-            <ul className="space-y-3 mb-8">
+            <p className="text-white text-[10px] tracking-widest uppercase font-inter font-medium mb-7">Contact</p>
+            <ul className="space-y-4 mb-8">
               {import.meta.env.VITE_EMAIL && (
                 <li>
-                  <a href={`mailto:${import.meta.env.VITE_EMAIL}`} className="text-[#A5A5A5] text-sm font-inter hover:text-[#C8A45D] transition-colors">
+                  <a href={`mailto:${import.meta.env.VITE_EMAIL}`} className="text-[#A5A5A5] text-sm font-inter hover:text-[#C8A45D] transition-colors duration-200">
                     {import.meta.env.VITE_EMAIL}
                   </a>
                 </li>
               )}
               {import.meta.env.VITE_PHONE && (
                 <li>
-                  <a href={`tel:${import.meta.env.VITE_PHONE}`} className="text-[#A5A5A5] text-sm font-inter hover:text-[#C8A45D] transition-colors">
+                  <a href={`tel:${import.meta.env.VITE_PHONE}`} className="text-[#A5A5A5] text-sm font-inter hover:text-[#C8A45D] transition-colors duration-200">
                     {import.meta.env.VITE_PHONE}
                   </a>
                 </li>
               )}
             </ul>
-            <Link to="/consultations" className="border border-[#C8A45D] text-[#C8A45D] text-[10px] tracking-widest uppercase font-inter px-4 py-2.5 hover:bg-[#C8A45D] hover:text-black transition-all duration-300 inline-block">
+            <Link to="/consultations" className="border border-[#C8A45D] text-[#C8A45D] text-[10px] tracking-widest uppercase font-inter px-5 py-3 hover:bg-[#C8A45D] hover:text-black transition-all duration-300 inline-block">
               Book Consultation
             </Link>
           </div>
@@ -114,9 +113,9 @@ export const Footer: React.FC = () => {
         <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-[#A5A5A5] text-xs font-inter">© 2026 Le Lörd Homes. All rights reserved.</p>
           <div className="flex items-center gap-6">
-            <Link to="/privacy-policy" className="text-[#A5A5A5] text-xs font-inter hover:text-[#C8A45D] transition-colors">Privacy Policy</Link>
-            <Link to="/terms" className="text-[#A5A5A5] text-xs font-inter hover:text-[#C8A45D] transition-colors">Terms & Conditions</Link>
-            <Link to="/cookie-policy" className="text-[#A5A5A5] text-xs font-inter hover:text-[#C8A45D] transition-colors">Cookie Policy</Link>
+            <Link to="/privacy-policy" className="text-[#A5A5A5] text-xs font-inter hover:text-[#C8A45D] transition-colors duration-200">Privacy Policy</Link>
+            <Link to="/terms" className="text-[#A5A5A5] text-xs font-inter hover:text-[#C8A45D] transition-colors duration-200">Terms & Conditions</Link>
+            <Link to="/cookie-policy" className="text-[#A5A5A5] text-xs font-inter hover:text-[#C8A45D] transition-colors duration-200">Cookie Policy</Link>
           </div>
         </div>
       </div>

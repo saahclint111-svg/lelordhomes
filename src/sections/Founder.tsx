@@ -12,13 +12,13 @@ const focusAreas = [
 ];
 
 export const Founder: React.FC = () => (
-  <section className="py-24 md:py-32 bg-[#111111] px-6">
-    <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+  <section className="py-32 md:py-44 bg-[#111111] px-6">
+    <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
       {/* Image */}
       <motion.div
         initial={{ opacity: 0, x: -30 }}
         whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, margin: '-60px' }}
         transition={{ duration: 0.7 }}
         className="relative aspect-[3/4] max-w-sm mx-auto lg:mx-0 overflow-hidden"
       >
@@ -36,26 +36,26 @@ export const Founder: React.FC = () => (
           }}
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/35 to-transparent" />
       </motion.div>
 
       {/* Content */}
       <motion.div
         initial={{ opacity: 0, x: 30 }}
         whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, margin: '-60px' }}
         transition={{ duration: 0.7, delay: 0.1 }}
       >
-        <p className="text-[#C8A45D] tracking-[0.3em] uppercase text-xs font-inter mb-6">Meet the Founder</p>
-        <h2 className="font-playfair text-4xl md:text-5xl font-bold text-white mb-2">ISAAC UMOREN</h2>
-        <p className="text-[#A5A5A5] font-inter text-base mb-8">Founder / Property Consultant</p>
+        <p className="text-[#C8A45D] tracking-[0.35em] uppercase text-[11px] font-inter mb-7">Meet the Founder</p>
+        <h2 className="font-playfair text-5xl md:text-6xl font-bold text-white mb-3 tracking-tight leading-tight">ISAAC UMOREN</h2>
+        <p className="text-[#A5A5A5] font-inter text-base mb-10">Founder / Property Consultant</p>
 
-        <div className="mb-8">
-          <p className="text-[#C8A45D] text-xs tracking-widest uppercase font-inter mb-4">Areas of Focus</p>
-          <ul className="space-y-2">
+        <div className="mb-10">
+          <p className="text-[#C8A45D] text-[11px] tracking-widest uppercase font-inter mb-5">Areas of Focus</p>
+          <ul className="space-y-3">
             {focusAreas.map((area) => (
-              <li key={area} className="flex items-center gap-3 text-[#D7D7D7] font-inter text-sm">
-                <span className="w-4 h-px bg-[#C8A45D]" />
+              <li key={area} className="flex items-center gap-4 text-[#D7D7D7] font-inter text-sm">
+                <span className="w-5 h-px bg-[#C8A45D] flex-shrink-0" />
                 {area}
               </li>
             ))}

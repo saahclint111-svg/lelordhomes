@@ -4,7 +4,7 @@ import { ConsultationCard } from '../components/ConsultationCard';
 import { consultations } from '../data/consultations';
 
 export const ConsultationsSection: React.FC = () => (
-  <section className="py-24 md:py-32 bg-[#080808] px-6">
+  <section className="py-32 md:py-44 bg-[#080808] px-6">
     <div className="max-w-6xl mx-auto">
       <SectionHeading
         eyebrow="Book a Session"

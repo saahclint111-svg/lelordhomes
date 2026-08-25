@@ -17,16 +17,17 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
   light = false,
 }) => {
   const alignClass = { left: 'text-left', center: 'text-center', right: 'text-right' }[align];
+  const subtitleAlign = align === 'center' ? 'mx-auto' : '';
 
   return (
-    <div className={`mb-12 ${alignClass}`}>
+    <div className={`mb-16 ${alignClass}`}>
       {eyebrow && (
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.5 }}
-          className="text-[#C8A45D] tracking-[0.3em] uppercase text-xs font-inter font-medium mb-4"
+          className="text-[#C8A45D] tracking-[0.35em] uppercase text-[11px] font-inter font-medium mb-5"
         >
           {eyebrow}
         </motion.p>
@@ -34,19 +35,19 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
       <motion.h2
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.1 }}
-        className={`font-playfair text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight ${light ? 'text-white' : 'text-white'}`}
+        viewport={{ once: true, margin: '-60px' }}
+        transition={{ duration: 0.65, delay: 0.1 }}
+        className={`font-playfair text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight ${light ? 'text-white' : 'text-white'}`}
       >
         {title}
       </motion.h2>
       {subtitle && (
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="mt-4 text-[#A5A5A5] text-base md:text-lg max-w-2xl mx-auto font-inter"
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.55, delay: 0.22 }}
+          className={`mt-5 text-[#A5A5A5] text-base md:text-lg max-w-2xl font-inter leading-relaxed ${subtitleAlign}`}
         >
           {subtitle}
         </motion.p>

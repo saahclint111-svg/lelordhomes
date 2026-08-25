@@ -11,23 +11,23 @@ const pillars = [
 ];
 
 export const WhyUs: React.FC = () => (
-  <section className="py-24 md:py-32 bg-[#111111] px-6">
+  <section className="py-32 md:py-44 bg-[#111111] px-6">
     <div className="max-w-7xl mx-auto">
       <SectionHeading eyebrow="Why Choose Us" title="WHY LE LÖRD HOMES?" />
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         {pillars.map(({ icon: Icon, title, desc }, i) => (
           <motion.div
             key={title}
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: i * 0.1 }}
-            className="bg-[#151515] border border-white/5 p-8 hover:border-[#C8A45D]/20 transition-colors duration-300 group"
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.55, delay: i * 0.1 }}
+            className="bg-[#0d0d0d] border border-white/5 p-10 hover:border-[#C8A45D]/20 transition-colors duration-300 group"
           >
-            <div className="w-12 h-12 border border-[#C8A45D]/30 group-hover:border-[#C8A45D] transition-colors flex items-center justify-center mb-6">
-              <Icon size={22} className="text-[#C8A45D]" />
+            <div className="w-11 h-11 border border-[#C8A45D]/30 group-hover:border-[#C8A45D] transition-colors duration-300 flex items-center justify-center mb-8">
+              <Icon size={20} className="text-[#C8A45D]" />
             </div>
-            <h3 className="font-playfair text-lg font-bold text-white mb-3">{title}</h3>
+            <h3 className="font-playfair text-lg font-bold text-white mb-4 leading-snug">{title}</h3>
             <p className="text-[#A5A5A5] text-sm leading-relaxed font-inter">{desc}</p>
           </motion.div>
         ))}
