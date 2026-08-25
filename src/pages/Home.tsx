@@ -5,9 +5,9 @@ import { BrandIntro } from '../sections/BrandIntro';
 import { ServicesSection } from '../sections/Services';
 import { WhyUs } from '../sections/WhyUs';
 import { PropertyManagementCTA } from '../sections/PropertyManagementCTA';
-import { ConsultationsSection } from '../sections/Consultations';
 import { Founder } from '../sections/Founder';
 import { Testimonials } from '../sections/Testimonials';
+import { ConsultationsSection } from '../sections/Consultations';
 import { ContactCTA } from '../sections/ContactCTA';
 
 const Home: React.FC = () => (
@@ -22,11 +22,11 @@ const Home: React.FC = () => (
     <Hero />
     <BrandIntro />
     <ServicesSection />
-    <WhyUs />
     <PropertyManagementCTA />
-    <ConsultationsSection />
-    <Founder />
+    <WhyUs />
     <Testimonials />
+    <Founder />
+    <ConsultationsSection />
     <ContactCTA />
   </>
 );
