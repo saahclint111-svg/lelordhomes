@@ -12,12 +12,12 @@ const About: React.FC = () => (
       <meta property="og:description" content="Learn about Le Lörd Homes and our approach to premium property solutions." />
     </Helmet>
     <div className="pt-20">
-      <section className="py-24 px-6 bg-[#080808]">
+      <section className="py-32 md:py-44 px-6 bg-[#080808]">
         <div className="max-w-4xl mx-auto text-center">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-[#C8A45D] tracking-[0.3em] uppercase text-xs font-inter mb-6"
+            className="text-[#C8A45D] tracking-[0.35em] uppercase text-xs font-inter mb-7"
           >
             About Us
           </motion.p>
@@ -25,7 +25,7 @@ const About: React.FC = () => (
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="font-playfair text-5xl md:text-6xl font-bold text-white mb-6"
+            className="font-playfair text-5xl md:text-6xl font-bold text-white mb-7 tracking-tight"
           >
             ABOUT LE LÖRD HOMES
           </motion.h1>
@@ -33,7 +33,7 @@ const About: React.FC = () => (
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-[#A5A5A5] font-inter text-lg leading-relaxed"
+            className="text-[#A5A5A5] font-inter text-lg leading-[1.85] max-w-2xl mx-auto"
           >
             Le Lörd Homes provides professional property solutions designed to make property ownership, investment and management simpler for landlords, investors and property owners.
           </motion.p>
