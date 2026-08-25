@@ -87,10 +87,7 @@ export const ServicesSection: React.FC = () => {
                   >
                     {item.title}
                   </h3>
-                  <p className="text-[#5a5a5a] font-sans font-light text-sm leading-relaxed group-hover:text-[#A5A5A5] transition-colors duration-300 hidden md:block">
-                    {item.desc}
-                  </p>
-                  <p className="text-[#5a5a5a] font-sans font-light text-sm leading-relaxed group-hover:text-[#A5A5A5] transition-colors duration-300 md:hidden mt-1">
+                  <p className="text-[#5a5a5a] font-sans font-light text-sm leading-relaxed group-hover:text-[#A5A5A5] transition-colors duration-300 mt-1">
                     {item.desc}
                   </p>
                 </div>

@@ -18,7 +18,7 @@ export const BrandIntro: React.FC = () => {
       className="py-32 md:py-48 bg-[#080808] px-6 md:px-12 lg:px-20"
       aria-labelledby="brand-intro-heading"
     >
-      <div className="max-w-[1400px] mx-auto max-w-2xl">
+      <div className="max-w-2xl">
         <motion.p
           {...fadeUp(0)}
           className="text-[#C8A45D] tracking-[0.35em] uppercase text-[10px] font-sans font-medium mb-8"

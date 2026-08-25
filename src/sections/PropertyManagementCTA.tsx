@@ -58,7 +58,7 @@ export const PropertyManagementCTA: React.FC = () => {
           transition={{ duration: 0.7, delay: 0.3 }}
         >
           <Link
-            to="/contact"
+            to="/services"
             className="inline-flex items-center gap-3 border border-[#C8A45D] text-[#C8A45D] font-sans font-medium tracking-[0.2em] uppercase text-[11px] px-7 py-3.5 hover:bg-[#C8A45D] hover:text-black transition-all duration-300"
           >
             VIEW SERVICES →
