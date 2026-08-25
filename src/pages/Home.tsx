@@ -3,11 +3,9 @@ import { Helmet } from 'react-helmet-async';
 import { Hero } from '../sections/Hero';
 import { BrandIntro } from '../sections/BrandIntro';
 import { ServicesSection } from '../sections/Services';
-import { WhyUs } from '../sections/WhyUs';
-import { PropertyManagementCTA } from '../sections/PropertyManagementCTA';
-import { Founder } from '../sections/Founder';
 import { Testimonials } from '../sections/Testimonials';
-import { ConsultationsSection } from '../sections/Consultations';
+import { WhyUs } from '../sections/WhyUs';
+import { Founder } from '../sections/Founder';
 import { ContactCTA } from '../sections/ContactCTA';
 
 const Home: React.FC = () => (
@@ -22,11 +20,9 @@ const Home: React.FC = () => (
     <Hero />
     <BrandIntro />
     <ServicesSection />
-    <PropertyManagementCTA />
-    <WhyUs />
     <Testimonials />
+    <WhyUs />
     <Founder />
-    <ConsultationsSection />
     <ContactCTA />
   </>
 );

@@ -7,7 +7,7 @@ export const Founder: React.FC = () => {
   const prefersReducedMotion = useReducedMotion();
 
   return (
-    <section className="py-32 md:py-48 bg-[#080808] px-6 md:px-12 lg:px-20">
+    <section className="py-32 md:py-48 bg-[#080808] px-6 md:px-12 lg:px-20 overflow-hidden">
       <div className="max-w-[1400px] mx-auto grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
         {/* Image */}
         <motion.div
