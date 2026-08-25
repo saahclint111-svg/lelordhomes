@@ -1,74 +1,55 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { SectionHeading } from '../components/SectionHeading';
+import { motion, useReducedMotion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { images } from '../data/images';
 
-const trustPoints = [
-  {
-    label: 'Property Consultancy',
-    desc: "Specialist guidance tailored to landlords, investors and property owners navigating complex property decisions.",
-  },
-  {
-    label: 'HMO & Serviced Accommodation',
-    desc: 'Deep experience managing high-yield property strategies including HMOs and serviced accommodation operations.',
-  },
-  {
-    label: 'Deal Sourcing',
-    desc: "A focused approach to identifying property opportunities that match each investor's goals and circumstances.",
-  },
-  {
-    label: 'Airbnb & Short-Let Optimisation',
-    desc: 'From listing creation to pricing strategy and guest management — helping hosts perform at their best.',
-  },
-];
+export const Testimonials: React.FC = () => {
+  const prefersReducedMotion = useReducedMotion();
 
-export const Testimonials: React.FC = () => (
-  <section className="py-24 md:py-32 bg-[#080808] px-6">
-    <div className="max-w-6xl mx-auto">
-      <SectionHeading
-        eyebrow="Our Expertise"
-        title="BUILT ON PROPERTY KNOWLEDGE"
-        subtitle="Le Lörd Homes brings focused, practical expertise to every client engagement."
-      />
-
-      <div className="grid md:grid-cols-2 gap-6 mb-16">
-        {trustPoints.map(({ label, desc }, i) => (
-          <motion.div
-            key={label}
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: i * 0.1 }}
-            className="bg-[#111111] border border-white/5 p-8 hover:border-[#C8A45D]/20 transition-colors duration-300"
-          >
-            <div className="w-6 h-px bg-[#C8A45D] mb-4" />
-            <h3 className="font-playfair text-lg font-bold text-white mb-3">{label}</h3>
-            <p className="text-[#A5A5A5] text-sm leading-relaxed font-inter">{desc}</p>
-          </motion.div>
-        ))}
-      </div>
-
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-        className="text-center bg-[#111111] border border-white/5 p-12"
-      >
-        <p className="text-[#C8A45D] text-xs tracking-[0.3em] uppercase font-inter mb-4">Work With Us</p>
-        <p className="font-playfair text-2xl md:text-3xl font-bold text-white mb-4">
-          Ready to take the next step?
-        </p>
-        <p className="text-[#A5A5A5] font-inter text-sm leading-relaxed max-w-xl mx-auto mb-8">
-          Speak with Le Lörd Homes today to discuss your property, your goals and how we can help.
-        </p>
-        <Link
-          to="/consultations"
-          className="inline-flex items-center gap-2 border border-[#C8A45D] text-[#C8A45D] font-inter font-medium tracking-widest uppercase text-sm px-8 py-4 hover:bg-[#C8A45D] hover:text-black transition-all duration-300"
+  return (
+    <section className="py-32 md:py-48 bg-[#080808] px-6 md:px-12 lg:px-20">
+      <div className="max-w-[1400px] mx-auto grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        {/* Large property image */}
+        <motion.div
+          initial={prefersReducedMotion ? {} : { opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+          className="relative aspect-[4/3] overflow-hidden"
         >
-          Book a Consultation
-        </Link>
-      </motion.div>
-    </div>
-  </section>
-);
+          <img
+            src={images.properties[1]}
+            alt="Featured property"
+            className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-black/20" />
+        </motion.div>
+
+        {/* Editorial text */}
+        <motion.div
+          initial={prefersReducedMotion ? {} : { opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.15 }}
+        >
+          <p className="text-[#C8A45D] tracking-[0.35em] uppercase text-[10px] font-sans font-medium mb-8">
+            FEATURED PROPERTY
+          </p>
+          <h2 className="text-white font-sans font-bold leading-[1.1] tracking-[-0.01em] text-[clamp(1.8rem,3.5vw,3rem)] mb-4">
+            A PREMIUM<br />PROPERTY PORTFOLIO
+          </h2>
+          <p className="text-[#5a5a5a] font-sans font-light text-sm leading-relaxed mb-10 max-w-xs">
+            We work with high-quality properties across key UK locations, helping owners, investors and landlords achieve their goals.
+          </p>
+          <Link
+            to="/services"
+            className="inline-flex items-center gap-3 text-white font-sans font-medium tracking-[0.2em] uppercase text-[11px] border-b border-white/20 pb-1 hover:border-[#C8A45D] hover:text-[#C8A45D] transition-all duration-300"
+          >
+            VIEW SERVICES →
+          </Link>
+        </motion.div>
+      </div>
+    </section>
+  );
+};

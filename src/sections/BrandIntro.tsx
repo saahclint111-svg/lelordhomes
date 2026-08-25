@@ -1,53 +1,44 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { SectionHeading } from '../components/SectionHeading';
+import { motion, useReducedMotion } from 'framer-motion';
 
-const pillars = [
-  'Reduce Stress',
-  'Save Time',
-  'Make Informed Decisions',
-  'Maximise Property Potential',
-];
+export const BrandIntro: React.FC = () => {
+  const prefersReducedMotion = useReducedMotion();
+  const fadeUp = (delay = 0) =>
+    prefersReducedMotion
+      ? {}
+      : {
+          initial: { opacity: 0, y: 28 },
+          whileInView: { opacity: 1, y: 0 },
+          viewport: { once: true },
+          transition: { duration: 0.8, delay, ease: 'easeOut' as const },
+        };
 
-export const BrandIntro: React.FC = () => (
-  <section className="py-24 md:py-32 bg-[#080808] px-6" aria-labelledby="brand-intro-heading">
-    <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
-      <div>
-        <SectionHeading
-          eyebrow="The Le Lörd Approach"
-          title="PROPERTY, MADE EASIER."
-          align="left"
-        />
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="space-y-4 text-[#A5A5A5] font-inter text-base leading-relaxed"
+  return (
+    <section
+      className="py-32 md:py-48 bg-[#080808] px-6 md:px-12 lg:px-20"
+      aria-labelledby="brand-intro-heading"
+    >
+      <div className="max-w-2xl">
+        <motion.p
+          {...fadeUp(0)}
+          className="text-[#C8A45D] tracking-[0.35em] uppercase text-[10px] font-sans font-medium mb-8"
         >
-          <p>
-            Le Lörd Homes provides professional property solutions designed to make property ownership, investment and management simpler.
-          </p>
-          <p>
-            Whether you are a landlord, investor or property owner, our approach combines practical support, strategic guidance and a clear understanding of property.
-          </p>
-        </motion.div>
+          OUR APPROACH
+        </motion.p>
+        <motion.h2
+          {...fadeUp(0.1)}
+          id="brand-intro-heading"
+          className="text-white font-sans font-bold leading-[1.05] tracking-[-0.02em] text-[clamp(2.4rem,5vw,4.5rem)] mb-8"
+        >
+          PROPERTY MADE<br />SIMPLER.
+        </motion.h2>
+        <motion.p
+          {...fadeUp(0.2)}
+          className="text-[#A5A5A5] font-sans font-light text-base md:text-lg leading-relaxed max-w-lg"
+        >
+          Le Lörd Homes provides professional property solutions designed around clarity, quality and confidence. Whether you are a landlord, investor or property owner, we simplify every step of your property journey.
+        </motion.p>
       </div>
-      <div className="grid grid-cols-2 gap-4">
-        {pillars.map((pillar, i) => (
-          <motion.div
-            key={pillar}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 * i }}
-            className="bg-[#111111] border border-white/5 p-6 hover:border-[#C8A45D]/20 transition-colors duration-300"
-          >
-            <div className="w-6 h-px bg-[#C8A45D] mb-3" />
-            <p className="font-playfair text-white text-sm font-semibold uppercase tracking-wide">{pillar}</p>
-          </motion.div>
-        ))}
-      </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};

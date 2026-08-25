@@ -1,56 +1,70 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { images } from '../data/images';
-import { WhatsAppButton } from '../components/WhatsAppButton';
-import { Button } from '../components/Button';
+import { Link } from 'react-router-dom';
 
-export const PropertyManagementCTA: React.FC = () => (
-  <section className="relative py-32 md:py-48 px-6 overflow-hidden">
-    <div className="absolute inset-0">
-      <img src={images.propertyMgmt} alt="" aria-hidden className="w-full h-full object-cover" loading="lazy" />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80" />
-    </div>
-    <div className="relative z-10 max-w-4xl mx-auto text-center">
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="text-[#C8A45D] tracking-[0.3em] uppercase text-xs font-inter mb-6"
-      >
-        Property Management
-      </motion.p>
-      <motion.h2
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.1 }}
-        className="font-playfair text-4xl md:text-6xl font-bold text-white mb-6 leading-tight"
-      >
-        HAVE A PROPERTY?<br />
-        <span className="italic">LET'S TALK.</span>
-      </motion.h2>
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.2 }}
-        className="text-[#D7D7D7] font-inter text-base md:text-lg max-w-xl mx-auto mb-10"
-      >
-        Whether you need support managing a property, improving its performance or finding the right strategy, let's discuss what you need.
-      </motion.p>
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.3 }}
-        className="flex flex-col sm:flex-row items-center justify-center gap-4"
-      >
-        <Button variant="primary" href="/contact" arrow>Property Management Enquiry</Button>
-        <WhatsAppButton
-          variant="inline"
-          message="Hi Le Lörd Homes, I have a property and I'd like to discuss management options."
+export const PropertyManagementCTA: React.FC = () => {
+  const prefersReducedMotion = useReducedMotion();
+
+  return (
+    <section className="relative py-40 md:py-56 px-6 md:px-12 lg:px-20 overflow-hidden">
+      {/* Large editorial image */}
+      <div className="absolute inset-0">
+        <img
+          src={images.propertyMgmt}
+          alt=""
+          aria-hidden
+          className="w-full h-full object-cover"
+          loading="lazy"
         />
-      </motion.div>
-    </div>
-  </section>
-);
+        <div className="absolute inset-0 bg-black/70" />
+      </div>
+
+      <div className="relative z-10 max-w-[1400px] mx-auto">
+        <motion.p
+          initial={prefersReducedMotion ? {} : { opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="text-[#C8A45D] tracking-[0.35em] uppercase text-[10px] font-sans font-medium mb-8"
+        >
+          FEATURED PROPERTY
+        </motion.p>
+
+        <motion.h2
+          initial={prefersReducedMotion ? {} : { opacity: 0, y: 28 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className="text-white font-sans font-bold leading-[1.0] tracking-[-0.02em] text-[clamp(2rem,5vw,4.5rem)] mb-4 max-w-2xl"
+        >
+          EXCEPTIONAL PROPERTY.<br />EXCEPTIONAL CARE.
+        </motion.h2>
+
+        <motion.p
+          initial={prefersReducedMotion ? {} : { opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="text-[#A5A5A5] font-sans font-light text-base md:text-lg mb-10 max-w-md"
+        >
+          Whether you need support managing a property, improving performance or finding the right strategy — we can help.
+        </motion.p>
+
+        <motion.div
+          initial={prefersReducedMotion ? {} : { opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.3 }}
+        >
+          <Link
+            to="/services"
+            className="inline-flex items-center gap-3 border border-[#C8A45D] text-[#C8A45D] font-sans font-medium tracking-[0.2em] uppercase text-[11px] px-7 py-3.5 hover:bg-[#C8A45D] hover:text-black transition-all duration-300"
+          >
+            VIEW SERVICES →
+          </Link>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
