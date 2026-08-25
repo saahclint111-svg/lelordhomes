@@ -69,7 +69,7 @@ export const Hero: React.FC = () => {
         </motion.h1>
 
         {/* Rotating animated phrase */}
-        <div className="h-[1.2em] overflow-hidden mb-8">
+        <div className="h-14 md:h-20 lg:h-28 overflow-hidden mb-8">
           <AnimatePresence mode="wait">
             <motion.p
               key={phraseIndex}
