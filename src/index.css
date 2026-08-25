@@ -21,10 +21,6 @@
   --white: #FFFFFF;
   --muted-white: #D7D7D7;
   --muted: #A5A5A5;
-
-  /* Spacing scale */
-  --section-y: 7rem;
-  --section-y-lg: 10rem;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }

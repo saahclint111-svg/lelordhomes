@@ -51,7 +51,7 @@ export const Hero: React.FC = () => {
           <img
             src="/images/le-lord-logo.png"
             alt="Le Lörd Homes"
-            className="h-14 md:h-18 w-auto object-contain mb-2"
+            className="h-14 md:h-20 w-auto object-contain mb-2"
             onError={(e) => { e.currentTarget.style.display = 'none'; }}
           />
         </motion.div>
