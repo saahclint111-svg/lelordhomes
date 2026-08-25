@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+  <defs>
+    <radialGradient id="red_grad" cx="30%" cy="25%" r="75%">
+      <stop offset="0%" stop-color="#ff3030"/>
+      <stop offset="45%" stop-color="#cc0000"/>
+      <stop offset="100%" stop-color="#7a0000"/>
+    </radialGradient>
+    <radialGradient id="chrome_grad" cx="25%" cy="20%" r="80%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="35%" stop-color="#d8d8d8"/>
+      <stop offset="100%" stop-color="#a0a0a0"/>
+    </radialGradient>
+    <filter id="drop_shadow">
+      <feDropShadow dx="3" dy="5" stdDeviation="7" flood-color="#000000" flood-opacity="0.55"/>
+    </filter>
+  </defs>
+  
+  <!-- Upper L (black outline) -->
+  <polygon points="155,35 265,35 265,155 355,155 355,215 155,215" 
+    fill="#0d0d0d" filter="url(#drop_shadow)"/>
+  <!-- Lower L (black outline) -->  
+  <polygon points="145,230 355,230 355,460 145,460 145,330 255,330 255,230"
+    fill="#0d0d0d" filter="url(#drop_shadow)"/>
+  
+  <!-- Chrome layer upper L -->
+  <polygon points="162,44 256,44 256,150 346,150 346,206 162,206" 
+    fill="url(#chrome_grad)"/>
+  <!-- Chrome layer lower L -->  
+  <polygon points="152,222 346,222 346,452 152,452 152,324 258,324 258,222"
+    fill="url(#chrome_grad)"/>
+  
+  <!-- Red fill upper L -->
+  <polygon points="170,54 246,54 246,150 336,150 336,196 170,196" 
+    fill="url(#red_grad)"/>
+  <!-- Red fill lower L -->  
+  <polygon points="162,232 336,232 336,442 162,442 162,318 250,318 250,232"
+    fill="url(#red_grad)"/>
+  
+  <!-- Shine highlight upper -->
+  <polygon points="170,54 215,54 170,108" fill="rgba(255,255,255,0.30)"/>
+  <!-- Shine highlight lower -->
+  <polygon points="162,232 218,232 162,292" fill="rgba(255,255,255,0.25)"/>
+  
+  <!-- Text labels in dark -->
+  <text x="178" y="120" font-family="Arial Black,Impact,sans-serif" font-size="36" 
+    font-weight="900" fill="#0d0d0d">Le.</text>
+  <text x="168" y="408" font-family="Arial Black,Impact,sans-serif" font-size="34" 
+    font-weight="900" fill="#0d0d0d">Lord</text>
+</svg>
