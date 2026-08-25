@@ -27,9 +27,9 @@ export const Footer: React.FC = () => {
   const instagram = import.meta.env.VITE_INSTAGRAM_URL;
 
   return (
-    <footer className="bg-[#080808] border-t border-white/[0.04] pt-20 pb-10 px-6 md:px-12 lg:px-20">
+    <footer className="bg-[#080808] border-t border-white/[0.04] pt-14 pb-10 px-5 sm:px-6 md:px-10 lg:px-16 xl:px-20">
       <div className="max-w-[1400px] mx-auto">
-        <div className="grid md:grid-cols-3 gap-14 mb-20">
+        <div className="grid md:grid-cols-3 gap-10 md:gap-12 mb-12">
           {/* Brand */}
           <div>
             <img
@@ -63,7 +63,7 @@ export const Footer: React.FC = () => {
 
           {/* Navigate */}
           <div>
-            <p className="text-white text-[10px] tracking-[0.3em] uppercase font-sans font-medium mb-7">Navigate</p>
+            <p className="text-white text-[10px] tracking-[0.25em] uppercase font-sans font-medium mb-5">Navigate</p>
             <ul className="space-y-3.5">
               {navLinks.map(({ label, to }) => (
                 <li key={to}>
@@ -77,7 +77,7 @@ export const Footer: React.FC = () => {
 
           {/* Contact */}
           <div>
-            <p className="text-white text-[10px] tracking-[0.3em] uppercase font-sans font-medium mb-7">Contact</p>
+            <p className="text-white text-[10px] tracking-[0.25em] uppercase font-sans font-medium mb-5">Contact</p>
             <ul className="space-y-3.5 mb-8">
               {import.meta.env.VITE_EMAIL && (
                 <li>
@@ -96,16 +96,16 @@ export const Footer: React.FC = () => {
             </ul>
             <Link
               to="/consultations"
-              className="border border-[#C8A45D]/60 text-[#C8A45D] text-[10px] tracking-[0.2em] uppercase font-sans font-medium px-5 py-2.5 hover:bg-[#C8A45D] hover:text-black transition-all duration-300 inline-block"
+              className="border border-[#C8A45D]/60 text-[#C8A45D] text-[10px] tracking-[0.16em] uppercase font-sans font-medium px-5 py-2.5 hover:bg-[#C8A45D] hover:text-black transition-all duration-300 inline-block"
             >
               Book Consultation
             </Link>
           </div>
         </div>
 
-        <div className="border-t border-white/[0.04] pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="border-t border-white/[0.04] pt-7 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-[#3a3a3a] text-xs font-sans">© 2026 Le Lörd Homes. All rights reserved.</p>
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
             {legalLinks.map(({ label, to }) => (
               <Link key={to} to={to} className="text-[#3a3a3a] text-xs font-sans hover:text-[#A5A5A5] transition-colors">
                 {label}

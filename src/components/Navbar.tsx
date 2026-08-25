@@ -35,11 +35,11 @@ export const Navbar: React.FC = () => {
       <nav
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
           scrolled
-            ? 'bg-[#080808]/92 backdrop-blur-md shadow-[0_1px_0_rgba(255,255,255,0.04)]'
-            : 'bg-transparent'
+            ? 'bg-[#080808]/95 backdrop-blur-md shadow-[0_1px_0_rgba(255,255,255,0.05)]'
+            : 'bg-[#080808]/80 backdrop-blur-sm'
         }`}
       >
-        <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 flex items-center justify-between h-18 py-5">
+        <div className="max-w-[1400px] mx-auto px-5 sm:px-6 md:px-10 lg:px-16 xl:px-20 flex items-center justify-between h-18 py-4">
           {/* Logo */}
           <Link to="/" className="flex-shrink-0" aria-label="Le Lörd Homes — Home">
             <img
@@ -58,12 +58,12 @@ export const Navbar: React.FC = () => {
           </Link>
 
           {/* Desktop nav */}
-          <div className="hidden lg:flex items-center gap-9">
+          <div className="hidden lg:flex items-center gap-8">
             {navLinks.map(({ label, to }) => (
               <Link
                 key={to}
                 to={to}
-                className={`text-[11px] tracking-[0.18em] uppercase font-sans font-medium transition-colors duration-200 ${
+                className={`text-[11px] tracking-[0.14em] uppercase font-sans font-medium transition-colors duration-200 ${
                   location.pathname === to ? 'text-[#C8A45D]' : 'text-[#888] hover:text-white'
                 }`}
               >
@@ -72,7 +72,7 @@ export const Navbar: React.FC = () => {
             ))}
             <Link
               to="/consultations"
-              className="ml-2 border border-[#C8A45D]/70 text-[#C8A45D] text-[10px] tracking-[0.2em] uppercase font-sans font-medium px-5 py-2 hover:bg-[#C8A45D] hover:text-black hover:border-[#C8A45D] transition-all duration-300"
+              className="ml-2 border border-[#C8A45D]/70 text-[#C8A45D] text-[10px] tracking-[0.16em] uppercase font-sans font-medium px-4 py-2 hover:bg-[#C8A45D] hover:text-black hover:border-[#C8A45D] transition-all duration-300"
             >
               Book a Consultation
             </Link>
@@ -98,40 +98,44 @@ export const Navbar: React.FC = () => {
             animate={{ opacity: 1 }}
             exit={prefersReducedMotion ? { opacity: 0 } : { opacity: 0 }}
             transition={{ duration: 0.35 }}
-            className="fixed inset-0 z-30 bg-[#080808] flex flex-col pt-20 px-8 pb-12 overflow-y-auto"
+            className="fixed inset-0 z-30 bg-[#080808] flex flex-col pt-18 px-5 sm:px-6 pb-10 overflow-y-auto"
           >
-            <nav className="flex flex-col gap-2 mt-10">
-              {navLinks.map(({ label, to }, i) => (
-                <motion.div
-                  key={to}
-                  initial={prefersReducedMotion ? {} : { opacity: 0, y: 16 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.06, duration: 0.4 }}
-                >
-                  <Link
-                    to={to}
-                    onClick={() => setMenuOpen(false)}
-                    className="font-sans font-bold text-4xl text-white hover:text-[#C8A45D] transition-colors duration-200 block py-3"
+            <div className="max-w-[420px] w-full mx-auto mt-8 rounded-2xl border border-white/10 bg-[#101010] p-6">
+              <nav className="flex flex-col">
+                {navLinks.map(({ label, to }, i) => (
+                  <motion.div
+                    key={to}
+                    initial={prefersReducedMotion ? {} : { opacity: 0, y: 16 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: i * 0.06, duration: 0.4 }}
                   >
-                    {label}
-                  </Link>
-                </motion.div>
-              ))}
-            </nav>
-            <motion.div
-              initial={prefersReducedMotion ? {} : { opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.35, duration: 0.4 }}
-              className="mt-12"
-            >
-              <Link
-                to="/consultations"
-                onClick={() => setMenuOpen(false)}
-                className="w-full text-center block border border-[#C8A45D] text-[#C8A45D] text-[11px] tracking-[0.2em] uppercase font-sans font-medium py-4 hover:bg-[#C8A45D] hover:text-black transition-all duration-300"
+                    <Link
+                      to={to}
+                      onClick={() => setMenuOpen(false)}
+                      className={`font-sans text-lg font-semibold tracking-[0.08em] uppercase transition-colors duration-200 block py-3 border-b border-white/6 ${
+                        location.pathname === to ? 'text-[#C8A45D]' : 'text-white hover:text-[#C8A45D]'
+                      }`}
+                    >
+                      {label}
+                    </Link>
+                  </motion.div>
+                ))}
+              </nav>
+              <motion.div
+                initial={prefersReducedMotion ? {} : { opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.35, duration: 0.4 }}
+                className="mt-8"
               >
-                Book a Consultation
-              </Link>
-            </motion.div>
+                <Link
+                  to="/consultations"
+                  onClick={() => setMenuOpen(false)}
+                  className="w-full text-center block border border-[#C8A45D] text-[#C8A45D] text-[11px] tracking-[0.16em] uppercase font-sans font-medium py-3.5 hover:bg-[#C8A45D] hover:text-black transition-all duration-300"
+                >
+                  Book a Consultation
+                </Link>
+              </motion.div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

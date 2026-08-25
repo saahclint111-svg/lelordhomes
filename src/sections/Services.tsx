@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
@@ -31,35 +31,34 @@ const items = [
 
 export const ServicesSection: React.FC = () => {
   const prefersReducedMotion = useReducedMotion();
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
     <section
-      className="py-32 md:py-48 bg-[#080808] px-6 md:px-12 lg:px-20"
+      className="py-20 md:py-24 bg-[#080808] px-5 sm:px-6 md:px-10 lg:px-16 xl:px-20"
       aria-labelledby="services-heading"
     >
       <div className="max-w-[1400px] mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-20">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
           <div>
-            <p className="text-[#C8A45D] tracking-[0.35em] uppercase text-[10px] font-sans font-medium mb-6">
+            <p className="text-[#C8A45D] tracking-[0.28em] uppercase text-[10px] font-sans font-semibold mb-4">
               WHAT WE DO
             </p>
             <h2
               id="services-heading"
-              className="text-white font-sans font-bold leading-[1.05] tracking-[-0.02em] text-[clamp(2rem,4.5vw,3.8rem)]"
+              className="text-white font-sans font-bold leading-[1.1] tracking-[-0.01em] text-[clamp(1.8rem,3.6vw,3rem)]"
             >
               OUR SERVICES
             </h2>
           </div>
           <Link
             to="/services"
-            className="text-[#C8A45D] text-[11px] tracking-[0.25em] uppercase font-sans font-medium hover:text-white transition-colors duration-200 shrink-0"
+            className="text-[#C8A45D] text-[11px] tracking-[0.16em] uppercase font-sans font-medium hover:text-white transition-colors duration-200 shrink-0"
           >
             VIEW ALL SERVICES →
           </Link>
         </div>
 
-        <div className="divide-y divide-white/5">
+        <div className="grid md:grid-cols-2 gap-4 md:gap-5">
           {items.map((item, i) => (
             <motion.div
               key={item.num}
@@ -67,35 +66,27 @@ export const ServicesSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.08 }}
-              onMouseEnter={() => setHoveredIndex(i)}
-              onMouseLeave={() => setHoveredIndex(null)}
             >
               <Link
                 to={item.to}
-                className="group flex items-start md:items-center gap-6 md:gap-10 py-8 md:py-10 transition-all duration-300"
+                className="group block h-full border border-white/10 bg-[#101010] rounded-xl p-5 md:p-6 transition-all duration-300 hover:border-[#C8A45D]/50 hover:-translate-y-0.5"
                 aria-label={item.title}
               >
-                <span
-                  className="text-[11px] tracking-[0.2em] font-sans font-medium transition-colors duration-300 mt-1 md:mt-0 shrink-0"
-                  style={{ color: hoveredIndex === i ? '#C8A45D' : '#3a3a3a' }}
-                >
+                <span className="text-[11px] tracking-[0.16em] font-sans font-semibold text-[#C8A45D]">
                   {item.num}
                 </span>
-                <div className="flex-1 min-w-0">
+                <div className="mt-3">
                   <h3
-                    className="text-white font-sans font-semibold tracking-[0.06em] text-base md:text-lg transition-colors duration-300 group-hover:text-[#C8A45D] mb-2 md:mb-1"
+                    className="text-white font-sans font-semibold tracking-[0.03em] text-base md:text-lg transition-colors duration-300 group-hover:text-[#C8A45D] mb-2"
                   >
                     {item.title}
                   </h3>
-                  <p className="text-[#5a5a5a] font-sans font-light text-sm leading-relaxed group-hover:text-[#A5A5A5] transition-colors duration-300 mt-1">
+                  <p className="text-[#A5A5A5] font-sans font-light text-sm leading-relaxed transition-colors duration-300">
                     {item.desc}
                   </p>
                 </div>
-                <span
-                  className="text-[#C8A45D] text-lg transition-all duration-300 shrink-0 opacity-0 group-hover:opacity-100 group-hover:translate-x-1"
-                  aria-hidden="true"
-                >
-                  →
+                <span className="mt-4 inline-flex text-[#C8A45D] text-xs tracking-[0.15em] uppercase font-medium">
+                  Learn more →
                 </span>
               </Link>
             </motion.div>

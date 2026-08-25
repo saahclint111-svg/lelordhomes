@@ -7,15 +7,15 @@ export const Founder: React.FC = () => {
   const prefersReducedMotion = useReducedMotion();
 
   return (
-    <section className="py-32 md:py-48 bg-[#080808] px-6 md:px-12 lg:px-20">
-      <div className="max-w-[1400px] mx-auto grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+    <section className="py-20 md:py-24 bg-[#080808] px-5 sm:px-6 md:px-10 lg:px-16 xl:px-20">
+      <div className="max-w-[1400px] mx-auto grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
         {/* Image */}
         <motion.div
-          initial={prefersReducedMotion ? {} : { opacity: 0, x: -24 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={prefersReducedMotion ? {} : { opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.9, ease: 'easeOut' as const }}
-          className="relative aspect-[4/5] overflow-hidden"
+          className="relative aspect-[4/5] overflow-hidden rounded-xl border border-white/10"
         >
           <img
             src={images.founder}
@@ -37,22 +37,22 @@ export const Founder: React.FC = () => {
 
         {/* Content */}
         <motion.div
-          initial={prefersReducedMotion ? {} : { opacity: 0, x: 24 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={prefersReducedMotion ? {} : { opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.9, delay: 0.15, ease: 'easeOut' as const }}
         >
-          <p className="text-[#C8A45D] tracking-[0.35em] uppercase text-[10px] font-sans font-medium mb-8">
+          <p           className="text-[#C8A45D] tracking-[0.28em] uppercase text-[10px] font-sans font-semibold mb-5">
             FOUNDER
           </p>
-          <h2 className="text-white font-sans font-bold tracking-[-0.01em] text-[clamp(2rem,4vw,3.2rem)] leading-[1.1] mb-3">
+          <h2 className="text-white font-sans font-bold tracking-[-0.01em] text-[clamp(1.8rem,3.4vw,2.8rem)] leading-[1.1] mb-2">
             ISAAC UMOREN
           </h2>
           <p className="text-[#5a5a5a] font-sans font-light text-sm tracking-[0.12em] uppercase mb-10">
             Founder / Property Consultant
           </p>
 
-          <p className="text-[#A5A5A5] font-sans font-light text-base leading-relaxed mb-10 max-w-sm">
+          <p className="text-[#A5A5A5] font-sans font-light text-sm sm:text-base leading-relaxed mb-8 max-w-lg">
             Isaac founded Le Lörd Homes with a clear purpose — to bring professional, honest and practical property expertise to landlords, investors and owners who deserve better than average.
           </p>
 
