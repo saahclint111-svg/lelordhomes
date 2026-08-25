@@ -4,7 +4,7 @@ import { ServiceCard } from '../components/ServiceCard';
 import { services } from '../data/services';
 
 export const ServicesSection: React.FC = () => (
-  <section className="py-24 md:py-32 bg-[#080808] px-6" aria-labelledby="services-heading">
+  <section className="py-28 md:py-40 bg-[#080808] px-6" aria-labelledby="services-heading">
     <div className="max-w-7xl mx-auto">
       <SectionHeading
         eyebrow="What We Do"

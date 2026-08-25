@@ -20,18 +20,18 @@ const Contact: React.FC = () => {
         <meta property="og:description" content="Get in touch with Le Lörd Homes. Send an enquiry or book a consultation." />
       </Helmet>
       <div className="pt-20">
-        <section className="py-24 px-6 bg-[#080808]">
+        <section className="py-28 px-6 bg-[#080808]">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-16">
-              <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-[#C8A45D] tracking-[0.3em] uppercase text-xs font-inter mb-4">Get in Touch</motion.p>
-              <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="font-playfair text-5xl md:text-6xl font-bold text-white">CONTACT US</motion.h1>
+            <div className="text-center mb-20">
+              <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-[#C8A45D] tracking-[0.35em] uppercase text-xs font-inter mb-5">Get in Touch</motion.p>
+              <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="font-playfair text-5xl md:text-6xl font-bold text-white tracking-tight">CONTACT US</motion.h1>
             </div>
-            <div className="grid md:grid-cols-2 gap-12">
+            <div className="grid md:grid-cols-2 gap-16">
               <div>
-                <p className="text-[#A5A5A5] font-inter text-base leading-relaxed mb-8">
+                <p className="text-[#A5A5A5] font-inter text-base leading-[1.85] mb-10">
                   Have a question, a property or an investment idea? We'd love to hear from you. Send us a message and we'll be in touch.
                 </p>
-                <div className="space-y-4 mb-8">
+                <div className="space-y-5 mb-10">
                   <p className="text-white text-xs tracking-widest uppercase font-inter font-medium mb-4">Quick Contact</p>
                   <WhatsAppButton variant="inline" />
                   {import.meta.env.VITE_EMAIL && (

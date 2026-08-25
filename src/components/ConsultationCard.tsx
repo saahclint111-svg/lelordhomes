@@ -36,28 +36,28 @@ export const ConsultationCard: React.FC<ConsultationCardProps> = ({
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.12 }}
-      className={`relative p-8 flex flex-col ${
+      transition={{ duration: 0.55, delay: index * 0.12 }}
+      className={`relative p-10 flex flex-col ${
         featured
           ? 'bg-[#C8A45D] text-black'
           : 'bg-[#111111] border border-white/5 text-white'
       }`}
     >
       {featured && (
-        <span className="absolute top-4 right-4 bg-black text-[#C8A45D] text-[10px] tracking-widest uppercase font-medium px-3 py-1">
+        <span className="absolute top-5 right-5 bg-black text-[#C8A45D] text-[10px] tracking-widest uppercase font-medium px-3 py-1">
           Most Popular
         </span>
       )}
-      <div className="flex items-center gap-2 mb-2">
+      <div className="flex items-center gap-2 mb-3">
         <Clock size={14} className={featured ? 'text-black/60' : 'text-[#C8A45D]'} />
         <span className={`text-xs tracking-widest uppercase font-medium ${featured ? 'text-black/70' : 'text-[#A5A5A5]'}`}>
           {duration}
         </span>
       </div>
-      <h3 className={`font-playfair text-2xl font-bold mb-1 ${featured ? 'text-black' : 'text-white'}`}>{title}</h3>
-      <p className={`text-3xl font-bold font-playfair mb-4 ${featured ? 'text-black' : 'text-[#C8A45D]'}`}>{price}</p>
-      <p className={`text-sm leading-relaxed font-inter mb-8 flex-grow ${featured ? 'text-black/80' : 'text-[#A5A5A5]'}`}>{description}</p>
-      <div className="flex items-center gap-2 mb-6">
+      <h3 className={`font-playfair text-2xl font-bold mb-2 leading-snug ${featured ? 'text-black' : 'text-white'}`}>{title}</h3>
+      <p className={`text-3xl font-bold font-playfair mb-5 ${featured ? 'text-black' : 'text-[#C8A45D]'}`}>{price}</p>
+      <p className={`text-sm leading-[1.8] font-inter mb-9 flex-grow ${featured ? 'text-black/80' : 'text-[#A5A5A5]'}`}>{description}</p>
+      <div className="flex items-center gap-2 mb-7">
         <CheckCircle size={14} className={featured ? 'text-black/60' : 'text-[#C8A45D]/60'} />
         <span className={`text-xs ${featured ? 'text-black/70' : 'text-[#A5A5A5]'}`}>No obligation</span>
       </div>

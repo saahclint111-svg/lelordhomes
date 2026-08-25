@@ -24,15 +24,15 @@ const PropertyManagement: React.FC = () => (
       <meta property="og:description" content="Professional property management support from Le Lörd Homes." />
     </Helmet>
     <div className="pt-20">
-      <section className="py-24 px-6 bg-[#080808] text-center">
-        <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-[#C8A45D] tracking-[0.3em] uppercase text-xs font-inter mb-4">Services</motion.p>
-        <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="font-playfair text-5xl md:text-6xl font-bold text-white mb-6">PROPERTY MANAGEMENT</motion.h1>
-        <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-[#A5A5A5] font-inter text-lg max-w-2xl mx-auto">
+      <section className="py-32 md:py-44 px-6 bg-[#080808] text-center">
+        <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-[#C8A45D] tracking-[0.35em] uppercase text-xs font-inter mb-5">Services</motion.p>
+        <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="font-playfair text-5xl md:text-6xl font-bold text-white mb-7 tracking-tight">PROPERTY MANAGEMENT</motion.h1>
+        <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-[#A5A5A5] font-inter text-lg max-w-2xl mx-auto leading-[1.85]">
           Whether you own one property or several, Le Lörd Homes can provide the management support you need to keep things running smoothly.
         </motion.p>
       </section>
 
-      <section className="py-24 md:py-32 bg-[#111111] px-6">
+      <section className="py-28 md:py-40 bg-[#111111] px-6">
         <div className="max-w-7xl mx-auto">
           <SectionHeading
             eyebrow="What We Offer"
@@ -47,11 +47,11 @@ const PropertyManagement: React.FC = () => (
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="bg-[#151515] border border-white/5 p-8 hover:border-[#C8A45D]/20 transition-colors duration-300"
+                className="bg-[#151515] border border-white/5 p-10 hover:border-[#C8A45D]/25 transition-colors duration-300"
               >
-                <CheckCircle size={20} className="text-[#C8A45D] mb-4" />
-                <h3 className="font-playfair text-lg font-bold text-white mb-3">{title}</h3>
-                <p className="text-[#A5A5A5] text-sm leading-relaxed font-inter">{desc}</p>
+                <CheckCircle size={20} className="text-[#C8A45D] mb-5" />
+                <h3 className="font-playfair text-lg font-bold text-white mb-4 leading-snug">{title}</h3>
+                <p className="text-[#A5A5A5] text-sm leading-[1.8] font-inter">{desc}</p>
               </motion.div>
             ))}
           </div>

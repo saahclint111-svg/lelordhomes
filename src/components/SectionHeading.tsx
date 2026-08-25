@@ -19,34 +19,34 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
   const alignClass = { left: 'text-left', center: 'text-center', right: 'text-right' }[align];
 
   return (
-    <div className={`mb-12 ${alignClass}`}>
+    <div className={`mb-16 ${alignClass}`}>
       {eyebrow && (
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-[#C8A45D] tracking-[0.3em] uppercase text-xs font-inter font-medium mb-4"
+          className="text-[#C8A45D] tracking-[0.35em] uppercase text-xs font-inter font-medium mb-5"
         >
           {eyebrow}
         </motion.p>
       )}
       <motion.h2
-        initial={{ opacity: 0, y: 24 }}
+        initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.1 }}
-        className={`font-playfair text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight ${light ? 'text-white' : 'text-white'}`}
+        className={`font-playfair text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight ${light ? 'text-white' : 'text-white'}`}
       >
         {title}
       </motion.h2>
       {subtitle && (
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="mt-4 text-[#A5A5A5] text-base md:text-lg max-w-2xl mx-auto font-inter"
+          className="mt-5 text-[#A5A5A5] text-base md:text-lg max-w-2xl mx-auto font-inter leading-relaxed"
         >
           {subtitle}
         </motion.p>

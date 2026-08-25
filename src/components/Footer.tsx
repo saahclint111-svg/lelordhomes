@@ -35,7 +35,7 @@ export const Footer: React.FC = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <div className="mb-1">
+            <div className="mb-4">
               <img
                 src="/images/le-lord-logo.png"
                 alt="Le Lörd Homes"
@@ -51,7 +51,6 @@ export const Footer: React.FC = () => {
                 <p className="text-[#C8A45D] text-[9px] tracking-[0.5em] uppercase font-inter -mt-1">HOMES</p>
               </div>
             </div>
-            <p className="text-[#C8A45D] text-[8px] tracking-[0.55em] uppercase font-inter font-medium mb-4">HOMS</p>
             <p className="text-[#A5A5A5] text-sm font-inter leading-relaxed mb-4">
               PROPERTY MADE EASIER.
             </p>
